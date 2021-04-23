@@ -1,6 +1,6 @@
 package model;
 
 public enum PlayerSymbol {
-* , !, O, X, %, $, #, +, &
+	//* , !, O, X, %, $, #, +, &
 
 }
