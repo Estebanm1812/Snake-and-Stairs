@@ -6,7 +6,7 @@ public class Menu {
 		
 	}
 	
-	public void startANewGame() {
+	public void startANewGame(int rows, int columns, int snakes, int ladders, int players) {
 		
 		
 	}

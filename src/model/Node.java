@@ -10,6 +10,11 @@ public class Node {
 	private Node up;
 	private Node down;
 	
+	public Node(int row,int column) {
+		this.row = row;
+		this.column = column;
+	}
+
 	public Node getNext() {
 		return next;
 	}
@@ -34,10 +39,7 @@ public class Node {
 	public void setDown(Node down) {
 		this.down = down;
 	}
-	public Node(int row,int column) {
-		this.row = row;
-		this.column = column;
-	}
+	
 	public int getRow() {
 		return row;
 	}
