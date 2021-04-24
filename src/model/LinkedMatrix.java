@@ -34,5 +34,15 @@ public class LinkedMatrix {
 			createColumn(i, j+1,current);
 		}
 	}
+	private String toStringRow(Node node) {
+		String msg = "";
+		
+		if(node != null) {
+			
+			//msg = toStringcol(node);
+		}
+		
+		return msg;
+	}
 	
 }
