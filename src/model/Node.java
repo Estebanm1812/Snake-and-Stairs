@@ -4,15 +4,20 @@ public class Node {
 
 	private int row;
 	private int column;
+	private int pos;
+	private boolean inUse;
+	
 	
 	private Node next;
 	private Node previous;
 	private Node up;
 	private Node down;
 	
-	public Node(int row,int column) {
+	public Node(int row,int column,int pos) {
 		this.row = row;
 		this.column = column;
+		this.pos = pos;
+		setInUse(false);
 	}
 
 	public Node getNext() {
@@ -45,6 +50,25 @@ public class Node {
 	}
 	public int getColumn() {
 		return column;
+	}
+	public String toString() {
+		return "(" + pos + ")" ;
+	}
+
+	public int getPos() {
+		return pos;
+	}
+
+	public void setPos(int pos) {
+		this.pos = pos;
+	}
+
+	public boolean isInUse() {
+		return inUse;
+	}
+
+	public void setInUse(boolean inUse) {
+		this.inUse = inUse;
 	}
 	
 }
