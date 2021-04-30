@@ -12,7 +12,7 @@ public class Player {
 	public Player(String symbol) {
 		
 		this.symbol = symbol;
-		pos = new Node(0,0,0);
+		pos = new Node(0,0,1);
 		moves = 0;
 		score = 0;
 		previusPlayer = null;
@@ -71,6 +71,26 @@ public class Player {
 
 	public void setNextPlayer(Player nextPlayer) {
 		this.nextPlayer = nextPlayer;
+	}
+	public String toStringPlayersSymbols() {
+		
+		String symbols = "";
+		symbols+= symbol + ",";
+		if(getNextPlayer()!=null) {
+			
+			symbols += toStringPlayersSymbols(getNextPlayer(), symbols);
+		}	
+		return symbols;
+	}
+	public String toStringPlayersSymbols(Player player,String msg) {
+		
+		if(player.getNextPlayer()!=null) {
+		
+			msg+= player.getSymbol() + ",";
+			msg+= toStringPlayersSymbols(player.getNextPlayer(), msg);
+		}
+		return msg;
+		
 	}
 	
 }

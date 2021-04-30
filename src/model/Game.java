@@ -12,9 +12,10 @@ public class Game {
 	
 	public Game(int numRows,int numColumns, int snakes, int ladders, int players) {
 		
-		setGameBoard(new Board(numRows,numColumns,snakes,ladders));
-		
 		assignPlayers(player1,1,players);
+		gameBoard =new Board(numRows,numColumns,snakes,ladders,player1);
+		
+		
 		
 		finished = false;
 	}

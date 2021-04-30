@@ -9,9 +9,9 @@ public class Board {
 	private int ladders;
 	private int countedSnakes;
 	private int countedLadders;
+	private String msg = "";
 	
-	
-	public Board(int m,int n,int s,int l) {
+	public Board(int m,int n,int s,int l,Player player1) {
 		
 		numCols = n;
 		numRows = m;
@@ -20,6 +20,7 @@ public class Board {
 		createBoard();
 		countedLadders = 0;
 		countedSnakes = 0;
+		
 	
 	}
 	public void createBoard() {
@@ -51,12 +52,22 @@ public class Board {
 		return msg;
 	}
 	public void toStringRow(Node node) {
-		
+			toStringColumn(node);
 		
 		if(node.getDown() != null) {
 			
 			node = node.getDown();
 			toStringRow(node);
+			
+		}
+		
+	}
+	public void toStringColumn(Node node) {
+		
+		if(node.getPos()==0) {
+			
+			msg += 
+			
 			
 		}
 		
