@@ -9,7 +9,7 @@ public class Board {
 	private int ladders;
 	private int countedSnakes;
 	private int countedLadders;
-	private Boolean finished;
+	
 	
 	public Board(int m,int n,int s,int l) {
 		
@@ -46,18 +46,20 @@ public class Board {
 	}
 	public String toString() {
 		String msg = " ";
+		toStringRow(first);
 		
 		return msg;
 	}
-	public String toStringRow(Node node) {
-		String msg = "";
+	public void toStringRow(Node node) {
 		
-		if(node != null) {
+		
+		if(node.getDown() != null) {
 			
-			//msg = toStringcol(node);
+			node = node.getDown();
+			toStringRow(node);
+			
 		}
 		
-		return msg;
 	}
 	public void genereateRandomSnake() {
 		
@@ -70,7 +72,8 @@ public class Board {
 		
 		if(first.getPos()==randomNumber) {
 			 
-			
+				
 		}
 	}
+	
 }
