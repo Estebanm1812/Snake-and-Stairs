@@ -20,7 +20,7 @@ public class Board {
 		createBoard();
 		countedLadders = 0;
 		countedSnakes = 0;
-		finished = false;
+	
 	}
 	public void createBoard() {
 		first = new Node(0,0,0);

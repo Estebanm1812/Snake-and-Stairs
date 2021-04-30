@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import model.Game;
+
 public class Menu {
 	
 	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));	
@@ -27,13 +29,7 @@ public class Menu {
 			}else{
 			switch(choose) {
 			
-			case 1: 
-			bw.write("Write the number of column, rows, snakes, ladders and players like one of the next two examples: \n" +
-			"4, 5, 2, 2, 3 \n" + "4,5,2,2,*,!,$");
-			String [] parts = br.readLine().split(",");
-			if(parts.length == 5) {
-				startANewGame(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),Integer.parseInt(parts[4]));
-			}
+			case 1:startANewGame();
 			
 			break;
 			
@@ -56,8 +52,28 @@ public class Menu {
 		return choose;
 	} 
 	
-	public static void startANewGame(int rows, int columns, int snakes, int ladders, int players) {
+	public static void startANewGame() throws IOException {
 		
+		Game newGame;
+		
+		bw.write("Write the number of column, rows, snakes, ladders and players like one of the next two examples: \n" +
+				"4, 5, 2, 2, 3 \n" + "4,5,2,2,*,!,$");
+				String [] parts = br.readLine().split(",");
+				switch(parts.length) {
+				case 5: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),Integer.parseInt(parts[4]));
+					
+				break;
+				case 6:
+					
+				break;
+				case 7:
+				break;
+				case 8:
+				break;
+				case 9:
+				break;
+				
+				}
 		
 	}
 	public static void watchScores() {
