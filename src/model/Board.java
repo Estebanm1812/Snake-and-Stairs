@@ -66,7 +66,7 @@ public class Board {
 		
 		if(node.getPos()==0) {
 			
-			msg += 
+		
 			
 			
 		}

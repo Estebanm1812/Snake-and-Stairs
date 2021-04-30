@@ -21,30 +21,201 @@ public class Game {
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		Player player4 = new Player(symbol4);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		player3.setNextPlayer(player4);
+		player4.setPreviusPlayer(player3);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4,String symbol5) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		Player player4 = new Player(symbol4);
+		Player player5 = new Player(symbol5);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		player3.setNextPlayer(player4);
+		player4.setPreviusPlayer(player3);
+		player4.setNextPlayer(player5);
+		player5.setPreviusPlayer(player4);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		Player player4 = new Player(symbol4);
+		Player player5 = new Player(symbol5);
+		Player player6 = new Player(symbol6);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		player3.setNextPlayer(player4);
+		player4.setPreviusPlayer(player3);
+		player4.setNextPlayer(player5);
+		player5.setPreviusPlayer(player4);
+		player5.setNextPlayer(player6);
+		player6.setPreviusPlayer(player5);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		Player player4 = new Player(symbol4);
+		Player player5 = new Player(symbol5);
+		Player player6 = new Player(symbol6);
+		Player player7 = new Player(symbol7);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		player3.setNextPlayer(player4);
+		player4.setPreviusPlayer(player3);
+		player4.setNextPlayer(player5);
+		player5.setPreviusPlayer(player4);
+		player5.setNextPlayer(player6);
+		player6.setPreviusPlayer(player5);
+		player6.setNextPlayer(player7);
+		player7.setPreviusPlayer(player6);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		Player player4 = new Player(symbol4);
+		Player player5 = new Player(symbol5);
+		Player player6 = new Player(symbol6);
+		Player player7 = new Player(symbol7);
+		Player player8 = new Player(symbol8);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		player3.setNextPlayer(player4);
+		player4.setPreviusPlayer(player3);
+		player4.setNextPlayer(player5);
+		player5.setPreviusPlayer(player4);
+		player5.setNextPlayer(player6);
+		player6.setPreviusPlayer(player5);
+		player6.setNextPlayer(player7);
+		player7.setPreviusPlayer(player6);
+		player7.setNextPlayer(player8);
+		player8.setPreviusPlayer(player7);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8,String symbol9) {
 		
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		Player player4 = new Player(symbol4);
+		Player player5 = new Player(symbol5);
+		Player player6 = new Player(symbol6);
+		Player player7 = new Player(symbol7);
+		Player player8 = new Player(symbol8);
+		Player player9 = new Player(symbol9);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		player3.setNextPlayer(player4);
+		player4.setPreviusPlayer(player3);
+		player4.setNextPlayer(player5);
+		player5.setPreviusPlayer(player4);
+		player5.setNextPlayer(player6);
+		player6.setPreviusPlayer(player5);
+		player6.setNextPlayer(player7);
+		player7.setPreviusPlayer(player6);
+		player7.setNextPlayer(player8);
+		player8.setPreviusPlayer(player7);
+		player8.setNextPlayer(player9);
+		player9.setPreviusPlayer(player8);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8,String symbol9,String symbol10) {
-		
+	
+		player1 = new Player(symbol1);
+		Player player2 = new Player(symbol2);
+		Player player3 = new Player(symbol3);
+		Player player4 = new Player(symbol4);
+		Player player5 = new Player(symbol5);
+		Player player6 = new Player(symbol6);
+		Player player7 = new Player(symbol7);
+		Player player8 = new Player(symbol8);
+		Player player9 = new Player(symbol9);
+		Player player10 = new Player(symbol10);
+		player1.setNextPlayer(player2);
+		player2.setPreviusPlayer(player1);
+		player2.setNextPlayer(player3);
+		player3.setPreviusPlayer(player2);
+		player3.setNextPlayer(player4);
+		player4.setPreviusPlayer(player3);
+		player4.setNextPlayer(player5);
+		player5.setPreviusPlayer(player4);
+		player5.setNextPlayer(player6);
+		player6.setPreviusPlayer(player5);
+		player6.setNextPlayer(player7);
+		player7.setPreviusPlayer(player6);
+		player7.setNextPlayer(player8);
+		player8.setPreviusPlayer(player7);
+		player8.setNextPlayer(player9);
+		player9.setPreviusPlayer(player8);
+		player9.setNextPlayer(player10);
+		player10.setPreviusPlayer(player9);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		finished = false;
+
 	}
 	public void assignPlayers(Player player, int counter,int players) {
 		
