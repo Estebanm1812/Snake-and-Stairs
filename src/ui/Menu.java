@@ -19,7 +19,9 @@ public class Menu {
 	public void mainMenu() throws IOException {
 		int choose = -1;
 		choose =  showMenu();
+		
 		if(choose<0 || choose>3) {
+			
 			try {
 				choose = showMenu();
 			} catch (IOException e) {
@@ -27,16 +29,19 @@ public class Menu {
 				e.printStackTrace();
 			}
 			}else{
+				
 			switch(choose) {
 			
-			case 1: startANewGame();
+			case 1: 
+				
+				startANewGame();
 			
 			break;
 			
 			case 2: watchScores();
 			break;
 			
-			case 3:
+			case 3: 
 			break;
 			}
 			}
@@ -57,7 +62,7 @@ public class Menu {
 		
 		Game newGame;
 		
-		bw.write("Write the number of column, rows, snakes, ladders and players like one of the next two examples: \n" +
+		System.out.println("Write the number of column, rows, snakes, ladders and players like one of the next two examples: \n" +
 				"4, 5, 2, 2, 3 \n" + "4,5,2,2,*,!,$");
 				String [] parts = br.readLine().split(",");
 				
@@ -69,7 +74,10 @@ public class Menu {
 				}else {
 				switch(parts.length) {
 				case 5: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),Integer.parseInt(parts[4]));
-					
+						System.out.println("llega");
+				System.out.println(newGame.printBoard());
+				System.out.println("llega2");
+				
 				break;
 				case 6: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5]);
 					

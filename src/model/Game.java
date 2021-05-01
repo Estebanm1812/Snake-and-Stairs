@@ -12,10 +12,9 @@ public class Game {
 	
 	public Game(int numRows,int numColumns, int snakes, int ladders, int players) {
 		
+		player1 = new Player("!");
 		assignPlayers(player1,1,players);
 		gameBoard =new Board(numRows,numColumns,snakes,ladders,player1);
-		
-		
 		
 		finished = false;
 	}
@@ -219,75 +218,76 @@ public class Game {
 	}
 	public void assignPlayers(Player player, int counter,int players) {
 		
+		
 		if(counter<=players) {
 		
 		switch(counter) {
 		
-		case 1:	player = new Player("!");
-				Player anotherPlayer = player.getNextPlayer();
+		/*case 1:	//player = new Player("!");
+				Player anotherPlayer = new Player("* ");
 				player.setNextPlayer(anotherPlayer);
 				anotherPlayer.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer, counter+1, players);
 				
-		break;
-		case 2: player = new Player("*");
-				Player anotherPlayer2 = player.getNextPlayer();
+		break;*/
+		case 2: //player = new Player("*");
+				Player anotherPlayer2 = new Player("*");
 				player.setNextPlayer(anotherPlayer2);
 				anotherPlayer2.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer2, counter+1, players);
 			
 		break;
-		case 3:	player = new Player("O");
-				Player anotherPlayer3 = player.getNextPlayer();
+		case 3:	//player = new Player("O");
+				Player anotherPlayer3 = new Player("O");
 				player.setNextPlayer(anotherPlayer3);
 				anotherPlayer3.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer3, counter+1, players);
 			
 		break;
-		case 4:	player = new Player("X");
-				Player anotherPlayer4 = player.getNextPlayer();
+		case 4:	//player = new Player("X");
+				Player anotherPlayer4 = new Player("X");
 				player.setNextPlayer(anotherPlayer4);
 				anotherPlayer4.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer4, counter+1, players);
 			
 		break;
-		case 5:	player = new Player("%");
-				Player anotherPlayer5 = player.getNextPlayer();
+		case 5:	//player = new Player("%");
+				Player anotherPlayer5 = new Player("%");
 				player.setNextPlayer(anotherPlayer5);
 				anotherPlayer5.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer5, counter+1, players);
 			
 		break;
-		case 6:	player = new Player("$");
-				Player anotherPlayer6 = player.getNextPlayer();
+		case 6:	//player = new Player("$");
+				Player anotherPlayer6 = new Player("$");
 				player.setNextPlayer(anotherPlayer6);
 				anotherPlayer6.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer6, counter+1, players);
 			
 		break;
-		case 7:	player = new Player("#");
-				Player anotherPlayer7 = player.getNextPlayer();
+		case 7:	//player = new Player("#");
+				Player anotherPlayer7 = new Player("#");
 				player.setNextPlayer(anotherPlayer7);
 				anotherPlayer7.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer7, counter+1, players);
 				
 		break;
-		case 8:	player = new Player("+");
-				Player anotherPlayer8 = player.getNextPlayer();
+		case 8:	//player = new Player("+");
+				Player anotherPlayer8 = new Player("+");
 				player.setNextPlayer(anotherPlayer8);
 				anotherPlayer8.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer8, counter+1, players);
 			
 		break;
-		case 9:	player = new Player("!");
-				Player anotherPlayer9 = player.getNextPlayer();
+		case 9:	//player = new Player("!");
+				Player anotherPlayer9 = new Player("!");
 				player.setNextPlayer(anotherPlayer9);
 				anotherPlayer9.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer9, counter+1, players);
 			
 		break;
-		case 10:player = new Player("&");
-				Player anotherPlayer10 = player.getNextPlayer();
+		case 10://player = new Player("&");
+				Player anotherPlayer10 = new Player("&");
 				player.setNextPlayer(anotherPlayer10);
 				anotherPlayer10.setPreviusPlayer(player);
 				assignPlayers(anotherPlayer10, counter+1, players);
@@ -341,6 +341,14 @@ public class Game {
 		
 		
 		return "a";
+	}
+	public String printBoard() {
+		
+		String msg = "Esto deberia imprimir algo ";
+		
+		msg += gameBoard.toString();
+		
+		return msg;
 	}
 	
 	

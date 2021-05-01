@@ -64,14 +64,13 @@ public class Board {
 	}
 	public void toStringColumn(Node node) {
 		
-		if(node.getPos()==0) {
-			
-		
-			
-			
+		msg += node.toString();
+		if(node.getNext()!=null) {
+			node = node.getNext();
+			toStringColumn(node);
+			}
 		}
 		
-	}
 	public void genereateRandomSnake() {
 		
 		if(countedSnakes == snakes) {
