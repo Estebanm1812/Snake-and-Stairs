@@ -6,18 +6,27 @@ public class Node {
 	private int column;
 	private int pos;
 	private boolean inUse;
-	
+	private String snakeLetter;
+	private int ladderNumber;
 	
 	private Node next;
 	private Node previous;
 	private Node up;
 	private Node down;
+	private Node connection;
+	private Node playerInNode;
 	
 	public Node(int row,int column,int pos) {
 		this.row = row;
 		this.column = column;
 		this.pos = pos;
 		setInUse(false);
+		setConnection(null);
+		setPlayerInNode(null);
+		snakeLetter = "";
+		ladderNumber = 0;
+
+	
 	}
 
 	public Node getNext() {
@@ -52,7 +61,18 @@ public class Node {
 		return column;
 	}
 	public String toString() {
-		return "(" + pos + ")" ;
+		
+		String msg = "";
+		msg += "[ " + pos;
+		if(snakeLetter!="") {
+			
+			msg+= snakeLetter;
+		}else if(ladderNumber !=0) {
+			
+			msg+= ladderNumber;
+		}
+		msg+= " ]";
+		return msg ;
 	}
 
 	public int getPos() {
@@ -70,5 +90,38 @@ public class Node {
 	public void setInUse(boolean inUse) {
 		this.inUse = inUse;
 	}
+
+	public String getSnakeLetter() {
+		return snakeLetter;
+	}
+
+	public void setSnakeLetter(String snakeLetter) {
+		this.snakeLetter = snakeLetter;
+	}
+
+	public int getLadderNumber() {
+		return ladderNumber;
+	}
+
+	public void setLadderNumber(int ladderNumber) {
+		this.ladderNumber = ladderNumber;
+	}
+
+	public Node getConnection() {
+		return connection;
+	}
+
+	public void setConnection(Node connection) {
+		this.connection = connection;
+	}
+
+	public Node getPlayerInNode() {
+		return playerInNode;
+	}
+
+	public void setPlayerInNode(Node playerInNode) {
+		this.playerInNode = playerInNode;
+	}
+
 	
 }
