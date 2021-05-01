@@ -307,7 +307,9 @@ public class Game {
 			return;
 		}	
 	}
-
+	
+	
+	
 	public WinerPlayer getPlayer() {
 		return player;
 	}
@@ -326,6 +328,27 @@ public class Game {
 	}
 	public void setFinished(Boolean finished) {
 		this.finished = finished;
+	}
+	public String movePlayers() {
+		
+		String msg = "";
+		
+		return msg;
+	}
+	private String movePlayers(Player player) {
+		
+		int movement = (int)(Math.random()*6)+1;
+		
+		
+		if(	(player.getPos().getPos()+movement)>gameBoard.getNumRows()) {
+			
+			
+			
+			
+		}
+		
+		
+		return "a";
 	}
 	
 	

@@ -59,6 +59,13 @@ public class Menu {
 		bw.write("Write the number of column, rows, snakes, ladders and players like one of the next two examples: \n" +
 				"4, 5, 2, 2, 3 \n" + "4,5,2,2,*,!,$");
 				String [] parts = br.readLine().split(",");
+				
+				if(parts.length<5 || parts.length>14) {
+					
+					bw.write("Unvalid entrance");
+					return;
+					
+				}else {
 				switch(parts.length) {
 				case 5: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),Integer.parseInt(parts[4]));
 					
@@ -84,6 +91,7 @@ public class Menu {
 				break;
 				case 14: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10],parts[11],parts[12],parts[13]);
 				break;
+				}
 				}
 		
 	}

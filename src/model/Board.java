@@ -86,5 +86,35 @@ public class Board {
 				
 		}
 	}
+	public Node getFirst() {
+		return first;
+	}
+	public void setFirst(Node first) {
+		this.first = first;
+	}
+	public int getNumCols() {
+		return numCols;
+	}
+	public void setNumCols(int numCols) {
+		this.numCols = numCols;
+	}
+	public int getNumRows() {
+		return numRows;
+	}
+	public void setNumRows(int numRows) {
+		this.numRows = numRows;
+	}
+	public int getSnakes() {
+		return snakes;
+	}
+	public void setSnakes(int snakes) {
+		this.snakes = snakes;
+	}
+	public int getLadders() {
+		return ladders;
+	}
+	public void setLadders(int ladders) {
+		this.ladders = ladders;
+	}
 	
 }
