@@ -237,68 +237,60 @@ public class Game {
 				assignPlayers(anotherPlayer2, counter+1, players);
 			
 		break;
-		case 3:
-			player = new Player("O");
-			Player anotherPlayer3 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer3);
-			anotherPlayer3.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer3, counter+1, players);
+		case 3:	player = new Player("O");
+				Player anotherPlayer3 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer3);
+				anotherPlayer3.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer3, counter+1, players);
 			
 		break;
-		case 4:
-			player = new Player("X");
-			Player anotherPlayer4 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer4);
-			anotherPlayer4.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer4, counter+1, players);
+		case 4:	player = new Player("X");
+				Player anotherPlayer4 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer4);
+				anotherPlayer4.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer4, counter+1, players);
 			
 		break;
-		case 5:
-			player = new Player("%");
-			Player anotherPlayer5 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer5);
-			anotherPlayer5.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer5, counter+1, players);
+		case 5:	player = new Player("%");
+				Player anotherPlayer5 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer5);
+				anotherPlayer5.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer5, counter+1, players);
 			
 		break;
-		case 6:
-			player = new Player("$");
-			Player anotherPlayer6 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer6);
-			anotherPlayer6.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer6, counter+1, players);
+		case 6:	player = new Player("$");
+				Player anotherPlayer6 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer6);
+				anotherPlayer6.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer6, counter+1, players);
 			
 		break;
-		case 7:
-			player = new Player("#");
-			Player anotherPlayer7 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer7);
-			anotherPlayer7.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer7, counter+1, players);
+		case 7:	player = new Player("#");
+				Player anotherPlayer7 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer7);
+				anotherPlayer7.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer7, counter+1, players);
+				
+		break;
+		case 8:	player = new Player("+");
+				Player anotherPlayer8 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer8);
+				anotherPlayer8.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer8, counter+1, players);
 			
 		break;
-		case 8:
-			player = new Player("+");
-			Player anotherPlayer8 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer8);
-			anotherPlayer8.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer8, counter+1, players);
+		case 9:	player = new Player("!");
+				Player anotherPlayer9 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer9);
+				anotherPlayer9.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer9, counter+1, players);
 			
 		break;
-		case 9:
-			player = new Player("!");
-			Player anotherPlayer9 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer9);
-			anotherPlayer9.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer9, counter+1, players);
-			
-		break;
-		case 10:
-			player = new Player("&");
-			Player anotherPlayer10 = player.getNextPlayer();
-			player.setNextPlayer(anotherPlayer10);
-			anotherPlayer10.setPreviusPlayer(player);
-			assignPlayers(anotherPlayer10, counter+1, players);
+		case 10:player = new Player("&");
+				Player anotherPlayer10 = player.getNextPlayer();
+				player.setNextPlayer(anotherPlayer10);
+				anotherPlayer10.setPreviusPlayer(player);
+				assignPlayers(anotherPlayer10, counter+1, players);
 			
 		break;
 		

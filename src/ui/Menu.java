@@ -29,7 +29,7 @@ public class Menu {
 			}else{
 			switch(choose) {
 			
-			case 1:startANewGame();
+			case 1: startANewGame();
 			
 			break;
 			
@@ -46,8 +46,9 @@ public class Menu {
 	}
 	public int showMenu() throws IOException {
 		int choose = 0;
-		
-		bw.write("(1) To Play a new Game\n" + "(2) To see the Winners`s scores \n" + "(3)To exit the Game\n");
+		System.out.println("Starting Applicacion");
+		System.out.println("Welcome to Snakes and Ladders, Please choose an Option");		
+		System.out.print("(1) To Play a new Game\n" + "(2) To see the Winners`s scores \n" + "(3) To exit the Game\n");
 		choose = Integer.parseInt(br.readLine());
 		return choose;
 	} 
@@ -93,7 +94,7 @@ public class Menu {
 				break;
 				}
 				}
-		
+		bw.close();
 	}
 	public static void watchScores() {
 		
