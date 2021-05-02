@@ -14,7 +14,7 @@ public class Node {
 	private Node up;
 	private Node down;
 	private Node connection;
-	private Node playerInNode;
+	private Player playerInNode;
 	
 	public Node(int row,int column,int pos) {
 		this.row = row;
@@ -115,11 +115,11 @@ public class Node {
 		this.connection = connection;
 	}
 
-	public Node getPlayerInNode() {
+	public Player getPlayerInNode() {
 		return playerInNode;
 	}
 
-	public void setPlayerInNode(Node playerInNode) {
+	public void setPlayerInNode(Player playerInNode) {
 		this.playerInNode = playerInNode;
 	}
 

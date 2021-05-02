@@ -20,11 +20,13 @@ public class Board {
 		createBoard();
 		countedLadders = 0;
 		countedSnakes = 0;
-		
+		first.setPlayerInNode();
 	
 	}
 	public void createBoard() {
 		first = new Node(1,1,1);
+		
+		System.out.println("El primer nodo esta en la posicion: " + first.getRow() + "," + first.getColumn() + " con un valor pos de: " + first.getPos());
 		createRow(1,1,first);
 		
 	}
@@ -67,7 +69,7 @@ public class Board {
 	}
 	public String toStringColumn(Node node) {
 		
-		msg += (getMsg() + node.toString());
+		msg = (getMsg() + node.toString());
 		System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos());
 		if(node.getNext()!=null) {
 		
