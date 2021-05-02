@@ -24,14 +24,15 @@ public class Board {
 	
 	}
 	public void createBoard() {
-		first = new Node(0,0,0);
-		createRow(0,0,first);
+		first = new Node(1,1,1);
+		createRow(1,1,first);
 		
 	}
 	public void createRow(int i,int j, Node node) {
 		createColumn(i,j,node);
-		if(i+1<numRows) {
+		if(i<numRows) {
 			Node down = new Node(i,j,node.getPos()+1);
+			System.out.println("Se creo un nodo en la posicion: " + i +","+ j + " con un valor pos:" + down.getPos());
 			node.setDown(down);
 			down.setUp(node); 
 			createRow(i+1, j, down);
@@ -41,15 +42,17 @@ public class Board {
 		if(j<numCols) {
 			Node current = new Node(i,j,node.getPos());
 			current.setPrevious(node);
+			System.out.println("Se creo un nodo en la posicion: " + i +","+ j + " con un valor pos:" + current.getPos());
 			node.setNext(current);
 			createColumn(i, j+1,current);
 		}
 	}
 	public String toString() {
-		String msg = " ";
-		msg = toStringRow(first);
-
-		return msg;
+		String msg2 = " ";
+		//msg = toStringRow(first);
+		toStringRow(first);
+		
+		return getMsg();
 	}
 	public String toStringRow(Node node) {
 			toStringColumn(node);
@@ -65,7 +68,7 @@ public class Board {
 	public String toStringColumn(Node node) {
 		
 		msg += (getMsg() + node.toString());
-		
+		System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos());
 		if(node.getNext()!=null) {
 		
 			node = node.getNext();
