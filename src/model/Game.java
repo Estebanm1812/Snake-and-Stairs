@@ -344,7 +344,7 @@ public class Game {
 	}
 	public String printBoard() {
 		
-		String msg = "Esto deberia imprimir algo ";
+		String msg = " ";
 		
 		msg += gameBoard.toString();
 		
