@@ -75,18 +75,18 @@ public class Player {
 	public String toStringPlayersSymbols() {
 		
 		String symbols = "";
-		symbols+= symbol + ",";
+		symbols+= symbol;
 		if(getNextPlayer()!=null) {
-			
+			symbols+= " ,";
 			symbols += toStringPlayersSymbols(getNextPlayer(), symbols);
 		}	
 		return symbols;
 	}
-	public String toStringPlayersSymbols(Player player,String msg) {
-		
+	private String toStringPlayersSymbols(Player player,String msg) {
+		msg+= player.getSymbol() + ",";
 		if(player.getNextPlayer()!=null) {
 		
-			msg+= player.getSymbol() + ",";
+		
 			msg+= toStringPlayersSymbols(player.getNextPlayer(), msg);
 		}
 		return msg;

@@ -20,7 +20,7 @@ public class Board {
 		createBoard();
 		countedLadders = 0;
 		countedSnakes = 0;
-		first.setPlayerInNode();
+		first.setPlayerInNode(player1);
 	
 	}
 	public void createBoard() {
@@ -30,8 +30,34 @@ public class Board {
 		createRow(1,1,first);
 		
 	}
+	public void createRow(int i,int j,Node node) {
+		
+		if(node.getRow()+1>numRows) {
+		
+			Node nodetmp = new Node(i+1,1,node.getPos()+1);
+			nodetmp.setPrevious(node);
+			node.setNext(nodetmp);
+			createRow(i, j+1, nodetmp);
+		}	
+		if(j<numRows+1) {
+		
+			Node node2 = new Node(i,j,node.getPos()+1);
+			node.setNext(node2);
+			node2.setPrevious(node);
+			createRow(i, j+1, node2);
+		}/*
+		if(i<numCols+1) {
+			
+			Node nNode = new Node(i,j,node.getPos()+1);
+			nNode.setPrevious(node);
+			node.setNext(node);
+			createRow()
+			
+		}*/
+	}
+	/*
 	public void createRow(int i,int j, Node node) {
-		createColumn(i,j,node);
+		createColumn(i,j+1,node);
 		if(i<numRows) {
 			Node down = new Node(i,j,node.getPos()+1);
 			System.out.println("Se creo un nodo en la posicion: " + i +","+ j + " con un valor pos:" + down.getPos());
@@ -41,14 +67,14 @@ public class Board {
 		}
 	}
 	public void createColumn(int i,int j, Node node) {
-		if(j<numCols) {
-			Node current = new Node(i,j,node.getPos());
+		if(j+1<numCols) {
+			Node current = new Node(i,j,node.getPos()+1);
 			current.setPrevious(node);
 			System.out.println("Se creo un nodo en la posicion: " + i +","+ j + " con un valor pos:" + current.getPos());
 			node.setNext(current);
 			createColumn(i, j+1,current);
 		}
-	}
+	}*/
 	public String toString() {
 		String msg2 = " ";
 		//msg = toStringRow(first);
@@ -59,9 +85,9 @@ public class Board {
 	public String toStringRow(Node node) {
 			toStringColumn(node);
 		
-		if(node.getDown() != null) {
+		if(node.getNext() != null) {
 			
-			node = node.getDown();
+			node = node.getNext();
 			toStringRow(node);
 			
 		}

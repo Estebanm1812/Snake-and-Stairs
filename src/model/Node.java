@@ -11,8 +11,8 @@ public class Node {
 	
 	private Node next;
 	private Node previous;
-	private Node up;
-	private Node down;
+	/*private Node up;
+	private Node down;*/
 	private Node connection;
 	private Player playerInNode;
 	
@@ -41,6 +41,7 @@ public class Node {
 	public void setPrevious(Node previous) {
 		this.previous = previous;
 	}
+	/*
 	public Node getUp() {
 		return up;
 	}
@@ -53,7 +54,7 @@ public class Node {
 	public void setDown(Node down) {
 		this.down = down;
 	}
-	
+	*/
 	public int getRow() {
 		return row;
 	}
@@ -70,6 +71,9 @@ public class Node {
 		}else if(ladderNumber !=0) {
 			
 			msg+= ladderNumber;
+		}
+		if(playerInNode!=null) {
+			msg+= " "+playerInNode.toStringPlayersSymbols();
 		}
 		msg+= " ]";
 		return msg ;
