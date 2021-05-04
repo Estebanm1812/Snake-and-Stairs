@@ -9,6 +9,7 @@ public class Node {
 	private String snakeLetter;
 	private int ladderNumber;
 	
+	
 	private Node next;
 	private Node previous;
 	/*private Node up;

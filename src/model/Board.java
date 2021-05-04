@@ -10,6 +10,7 @@ public class Board {
 	private int countedSnakes;
 	private int countedLadders;
 	private String msg = " ";
+	private int interation;
 	
 	public Board(int m,int n,int s,int l,Player player1) {
 		
@@ -21,39 +22,40 @@ public class Board {
 		countedLadders = 0;
 		countedSnakes = 0;
 		first.setPlayerInNode(player1);
-	
+		interation = 0;
+		
 	}
 	public void createBoard() {
 		first = new Node(1,1,1);
 		
-		System.out.println("El primer nodo esta en la posicion: " + first.getRow() + "," + first.getColumn() + " con un valor pos de: " + first.getPos());
-		createRow(1,1,first);
+		//System.out.println("El primer nodo esta en la posicion: " + first.getRow() + "," + first.getColumn() + " con un valor pos de: " + first.getPos());
+		createRow(1,2,first);
 		
 	}
+	
 	public void createRow(int i,int j,Node node) {
 		
-		if(node.getRow()+1>numRows) {
+		Node tmpNode;
 		
-			Node nodetmp = new Node(i+1,1,node.getPos()+1);
-			nodetmp.setPrevious(node);
-			node.setNext(nodetmp);
-			createRow(i, j+1, nodetmp);
-		}	
-		if(j<numRows+1) {
+		if(j<=numRows && i <=numCols) {
 		
-			Node node2 = new Node(i,j,node.getPos()+1);
-			node.setNext(node2);
-			node2.setPrevious(node);
-			createRow(i, j+1, node2);
-		}/*
-		if(i<numCols+1) {
-			
-			Node nNode = new Node(i,j,node.getPos()+1);
-			nNode.setPrevious(node);
-			node.setNext(node);
-			createRow()
-			
-		}*/
+			tmpNode= new Node(i,j,node.getPos()+1);
+			tmpNode.setPrevious(node);
+			node.setNext(tmpNode);
+			System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos());
+		
+			if(j+1>numRows) {
+				System.out.println(j+1);
+				System.out.println("entra a crear otra columna");
+				createRow(i+1,1,tmpNode);
+				
+				
+			}else{
+				System.out.println("entra a crear otra fila");
+				createRow(i,j+1,tmpNode);
+			}	
+		
+		}
 	}
 	/*
 	public void createRow(int i,int j, Node node) {
@@ -79,6 +81,7 @@ public class Board {
 		String msg2 = " ";
 		//msg = toStringRow(first);
 		toStringRow(first);
+		System.out.println(interation);
 		
 		return getMsg();
 	}
@@ -96,7 +99,7 @@ public class Board {
 	public String toStringColumn(Node node) {
 		
 		msg = (getMsg() + node.toString());
-		System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos());
+		//System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos());
 		if(node.getNext()!=null) {
 		
 			node = node.getNext();
