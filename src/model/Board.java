@@ -150,7 +150,7 @@ public class Board {
 		System.out.println(randomNumber2);
 		int randomNumber3 = (int)(Math.random()*26)+1;
 		String letter = generateRandomLetter(randomNumber3);
-		System.out.println("Aun no entra1");
+		System.out.println("Aun no entra1, la letra elegida fue:" + letter);
 		if(first.getPos()==randomNumber) {
 			 
 				
@@ -166,6 +166,8 @@ public class Board {
 			tmp2.setSnakeLetter(letter);
 			System.out.println("Entro");
 			countedSnakes+=1;
+			System.out.println("se han creado:" + countedSnakes + " Serpientes hasta el momento1");
+			genereateRandomSnake();
 		}
 		}
 	}
@@ -282,13 +284,14 @@ public class Board {
 				generateLadders();
 				return;
 			}else {
+				
 			tmp.setConnection(tmp2);
 			tmp2.setConnection(tmp);
 			tmp.setLadderNumber(randomNumber3);
 			tmp2.setLadderNumber(randomNumber3);
-			System.out.println("Entro");
+			System.out.println("Entro a la parte final");
 			countedLadders+=1;
-		
+			generateLadders();
 			}
 		}	
 		}

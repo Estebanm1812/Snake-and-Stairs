@@ -68,10 +68,10 @@ public class Node {
 		msg += "[ " + pos;
 		if(snakeLetter!="") {
 			
-			msg+= snakeLetter;
+			msg+= " "+snakeLetter;
 		}else if(ladderNumber !=0) {
 			
-			msg+= ladderNumber;
+			msg+= " " +ladderNumber;
 		}
 		if(playerInNode!=null) {
 			msg+= " "+playerInNode.toStringPlayersSymbols();
