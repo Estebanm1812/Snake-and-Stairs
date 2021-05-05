@@ -21,7 +21,7 @@ public class Node {
 		this.row = row;
 		this.column = column;
 		this.pos = pos;
-		setInUse(false);
+		inUse = (false);
 		setConnection(null);
 		setPlayerInNode(null);
 		snakeLetter = "";

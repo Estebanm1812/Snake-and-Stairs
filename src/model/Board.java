@@ -43,7 +43,7 @@ public class Board {
 			tmpNode= new Node(i,j,node.getPos()+1);
 			tmpNode.setPrevious(node);
 			node.setNext(tmpNode);
-			System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos());
+			System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos() + " con una disponibilidad de: " + node.isInUse());
 		
 			if(j+1>numRows) {
 				System.out.println(j+1);
@@ -144,9 +144,9 @@ public class Board {
 			return;
 		}else {
 		int n = numRows*numCols;
-		int randomNumber = (int)(Math.random()*n)+1;
+		int randomNumber = (int)(Math.random()*(n-1))+1;
 		System.out.println(randomNumber);
-		int randomNumber2 = (int)(Math.random()*n)+1;
+		int randomNumber2 = (int)(Math.random()*(n-1))+1;
 		System.out.println(randomNumber2);
 		int randomNumber3 = (int)(Math.random()*26)+1;
 		String letter = generateRandomLetter(randomNumber3);
@@ -264,11 +264,11 @@ public class Board {
 			return;
 		}else {
 		int n = numRows*numCols;
-		int randomNumber = (int)(Math.random()*n)+1;
+		int randomNumber = (int)(Math.random()*(n-1))+1;
 		System.out.println(randomNumber);
-		int randomNumber2 = (int)(Math.random()*n)+1;
+		int randomNumber2 = (int)(Math.random()*(n-1))+1;
 		System.out.println(randomNumber2);
-		int randomNumber3 = (int)(Math.random()*120)+1;
+		int randomNumber3 = (int)(Math.random()*ladders)+1;
 		System.out.println(randomNumber3);
 		System.out.println("Aun no entra2");
 		if(first.getPos()==randomNumber) {
@@ -277,23 +277,35 @@ public class Board {
 			
 		}else {
 			Node tmp = findNode(randomNumber, first);
-			tmp.setInUse(true);
+			
 			Node tmp2 = findNode(randomNumber2, first);
-			tmp2.setInUse(true);
-			if(tmp.isInUse()==true || tmp2.isInUse()==true) {
-				generateLadders();
-				return;
+			
+			
+			System.out.println("Primer nodo temporal: " + tmp.toString());
+			System.out.println("El estado del primer nodo temporal es:" + tmp.isInUse());
+			System.out.println("Segundo Nodo temporal: " + tmp2.toString());
+			System.out.println("El estado del segundo nodo temporal es:" + tmp2.isInUse());
+			
+			if(tmp.isInUse()==false && tmp2.isInUse()==false) {
+				
+				tmp.setConnection(tmp2);
+				tmp.setInUse(true);
+				tmp2.setConnection(tmp);
+				tmp2.setInUse(true);
+				tmp.setLadderNumber(randomNumber3);
+				tmp2.setLadderNumber(randomNumber3);
+				System.out.println("Entro a la parte final");
+				countedLadders+=1;
+				
+				
 			}else {
 				
-			tmp.setConnection(tmp2);
-			tmp2.setConnection(tmp);
-			tmp.setLadderNumber(randomNumber3);
-			tmp2.setLadderNumber(randomNumber3);
-			System.out.println("Entro a la parte final");
-			countedLadders+=1;
-			generateLadders();
+				generateLadders();
+				return;
+			
 			}
-		}	
+		}
+		generateLadders();
 		}
 	}	
 		
