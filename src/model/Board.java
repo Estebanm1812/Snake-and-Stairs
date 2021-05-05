@@ -22,6 +22,8 @@ public class Board {
 		countedSnakes = 0;
 		first.setPlayerInNode(player1);
 		interation = 0;
+		genereateRandomSnake();
+		generateLadders();
 		
 	}
 	public void createBoard() {
@@ -140,16 +142,173 @@ public class Board {
 		
 		if(countedSnakes == snakes) {
 			return;
-		}
-		int n = snakes*ladders;
+		}else {
+		int n = numRows*numCols;
 		int randomNumber = (int)(Math.random()*n)+1;
+		System.out.println(randomNumber);
 		int randomNumber2 = (int)(Math.random()*n)+1;
-		
+		System.out.println(randomNumber2);
+		int randomNumber3 = (int)(Math.random()*26)+1;
+		String letter = generateRandomLetter(randomNumber3);
+		System.out.println("Aun no entra1");
 		if(first.getPos()==randomNumber) {
 			 
 				
+			
+		}else {
+			Node tmp = findNode(randomNumber, first);
+			tmp.setInUse(true);
+			Node tmp2 = findNode(randomNumber2, first);
+			tmp2.setInUse(true);
+			tmp.setConnection(tmp2);
+			tmp2.setConnection(tmp);
+			tmp.setSnakeLetter(letter);
+			tmp2.setSnakeLetter(letter);
+			System.out.println("Entro");
+			countedSnakes+=1;
+		}
 		}
 	}
+	public String generateRandomLetter(int i) {
+		
+		String letter = " ";
+		
+		switch(i) {
+		
+		case 1: letter = "A";
+		break;
+		
+		case 2: letter = "B";
+		break;
+		
+		case 3: letter = "C";
+		break;
+		
+		case 4: letter = "D";
+		break;
+		
+		case 5: letter = "E";
+		break;
+			
+		case 6: letter = "F";
+		break;
+		
+		case 7: letter = "G";
+		break;
+		
+		case 8: letter = "H";
+		break;
+		
+		case 9: letter = "I";
+		break;
+		
+		case 10: letter = "J";
+		break;
+		
+		case 11: letter = "K";
+		break;
+		
+		case 12: letter = "L";
+		break;
+		
+		case 13: letter = "M";
+		break;
+		
+		case 14: letter = "N";
+		break;
+		
+		case 15: letter = "O";
+		break;
+		
+		case 16: letter = "P";
+		break;
+		
+		case 17: letter = "Q";
+		break;
+		
+		case 18: letter = "R";
+		break;
+		
+		case 19: letter = "S";
+		break;
+		
+		case 20: letter = "T";
+		break;
+		
+		case 21: letter = "U";
+		break;
+		
+		case 22: letter = "V";
+		break;
+		
+		case 23: letter = "W";
+		break;
+		
+		case 24: letter = "X";
+		break;
+		
+		case 25: letter = "Y";
+		break;
+		
+		case 26: letter = "Z";
+		break;
+		
+		}
+		return letter;
+	}
+	public void generateLadders() {
+		
+		if(countedLadders == ladders) {
+			return;
+		}else {
+		int n = numRows*numCols;
+		int randomNumber = (int)(Math.random()*n)+1;
+		System.out.println(randomNumber);
+		int randomNumber2 = (int)(Math.random()*n)+1;
+		System.out.println(randomNumber2);
+		int randomNumber3 = (int)(Math.random()*120)+1;
+		System.out.println(randomNumber3);
+		System.out.println("Aun no entra2");
+		if(first.getPos()==randomNumber) {
+			 
+				
+			
+		}else {
+			Node tmp = findNode(randomNumber, first);
+			tmp.setInUse(true);
+			Node tmp2 = findNode(randomNumber2, first);
+			tmp2.setInUse(true);
+			if(tmp.isInUse()==true || tmp2.isInUse()==true) {
+				generateLadders();
+				return;
+			}else {
+			tmp.setConnection(tmp2);
+			tmp2.setConnection(tmp);
+			tmp.setLadderNumber(randomNumber3);
+			tmp2.setLadderNumber(randomNumber3);
+			System.out.println("Entro");
+			countedLadders+=1;
+		
+			}
+		}	
+		}
+	}	
+		
+		
+		
+	
+	public Node findNode(int position, Node node) {
+		
+		if(node.getPos()==position) {
+		
+			return node;
+			
+		}else {
+			
+			return findNode(position,node.getNext());
+		}
+	}
+	
 	public Node getFirst() {
 		return first;
 	}
