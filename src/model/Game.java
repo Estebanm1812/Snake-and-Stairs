@@ -10,6 +10,8 @@ public class Game {
 	
 	private Player player1;
 	
+	private String msg;
+	
 	public Game(int numRows,int numColumns, int snakes, int ladders, int players) {
 		
 		player1 = new Player("!");
@@ -18,6 +20,7 @@ public class Game {
 		gameBoard =new Board(numRows,numColumns,snakes,ladders,player1);
 		
 		finished = false;
+		msg = gameBoard.toString();
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2) {
 		

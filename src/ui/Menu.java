@@ -74,9 +74,10 @@ public class Menu {
 				}else {
 				switch(parts.length) {
 				case 5: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),Integer.parseInt(parts[4]));
-					
-				System.out.println(newGame.printBoard());
-			
+				
+				String msg = newGame.printBoard();
+				System.out.println(msg);
+				
 				
 				break;
 				case 6: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5]);
