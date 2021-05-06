@@ -88,14 +88,14 @@ public class Player {
 		
 		counter+=1;
 		System.out.println(counter);
-		msg += player.getSymbol() + " Entro";
+		msg += player.getSymbol();
 		System.out.println(player.getSymbol());
 		
 		if(player.getNextPlayer()!=null) {
 		
 			msg+= " ,";
 			
-			msg+= toStringPlayersSymbols(player.getNextPlayer(), msg);
+			msg= toStringPlayersSymbols(player.getNextPlayer(), msg);
 		}
 		return msg;
 		
