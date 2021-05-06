@@ -9,7 +9,7 @@ public class Board {
 	private int ladders;
 	private int countedSnakes;
 	private int countedLadders;
-	private int interation;
+	
 	
 	public Board(int m,int n,int s,int l,Player player1) {
 		
@@ -21,7 +21,7 @@ public class Board {
 		countedLadders = 0;
 		countedSnakes = 0;
 		first.setPlayerInNode(player1);
-		interation = 0;
+	
 		genereateRandomSnake();
 		generateLadders();
 		
@@ -43,16 +43,15 @@ public class Board {
 			tmpNode= new Node(i,j,node.getPos()+1);
 			tmpNode.setPrevious(node);
 			node.setNext(tmpNode);
-			System.out.println("El nodo en " + node.getRow()+","+node.getColumn()+" tiene una posicion: " + node.getPos() + " con una disponibilidad de: " + node.isInUse());
+			
 		
 			if(j+1>numRows) {
-				System.out.println(j+1);
-				System.out.println("entra a crear otra columna");
+				
 				createRow(i+1,1,tmpNode);
 				
 				
 			}else{
-				System.out.println("entra a crear otra fila");
+				
 				createRow(i,j+1,tmpNode);
 			}	
 		
@@ -82,7 +81,6 @@ public class Board {
 		String msg2 = " ";
 		msg2 = toStringRow();
 		
-		System.out.println(interation);
 		
 		return msg2;
 	}
@@ -145,12 +143,12 @@ public class Board {
 		}else {
 		int n = numRows*numCols;
 		int randomNumber = (int)(Math.random()*(n-1))+1;
-		System.out.println(randomNumber);
+		
 		int randomNumber2 = (int)(Math.random()*(n-1))+1;
-		System.out.println(randomNumber2);
-		int randomNumber3 = (int)(Math.random()*26)+1;
-		String letter = generateRandomLetter(randomNumber3);
-		System.out.println("Aun no entra1, la letra elegida fue:" + letter);
+		
+		
+		String letter = generateRandomLetter(countedSnakes+1);
+	
 		if(first.getPos()==randomNumber) {
 			 
 				
@@ -164,9 +162,9 @@ public class Board {
 			tmp2.setConnection(tmp);
 			tmp.setSnakeLetter(letter);
 			tmp2.setSnakeLetter(letter);
-			System.out.println("Entro");
+			
 			countedSnakes+=1;
-			System.out.println("se han creado:" + countedSnakes + " Serpientes hasta el momento1");
+			
 			genereateRandomSnake();
 		}
 		}
@@ -265,15 +263,14 @@ public class Board {
 		}else {
 		int n = numRows*numCols;
 		int randomNumber = (int)(Math.random()*(n-1))+1;
-		System.out.println(randomNumber);
+		
 		int randomNumber2 = (int)(Math.random()*(n-1))+1;
-		System.out.println(randomNumber2);
+		
 		int randomNumber3 = (int)(Math.random()*ladders)+1;
-		System.out.println(randomNumber3);
-		System.out.println("Aun no entra2");
+	
 		if(first.getPos()==randomNumber) {
 			 
-				
+				generateLadders();
 			
 		}else {
 			Node tmp = findNode(randomNumber, first);
@@ -281,20 +278,15 @@ public class Board {
 			Node tmp2 = findNode(randomNumber2, first);
 			
 			
-			System.out.println("Primer nodo temporal: " + tmp.toString());
-			System.out.println("El estado del primer nodo temporal es:" + tmp.isInUse());
-			System.out.println("Segundo Nodo temporal: " + tmp2.toString());
-			System.out.println("El estado del segundo nodo temporal es:" + tmp2.isInUse());
-			
 			if(tmp.isInUse()==false && tmp2.isInUse()==false) {
 				
 				tmp.setConnection(tmp2);
 				tmp.setInUse(true);
 				tmp2.setConnection(tmp);
 				tmp2.setInUse(true);
-				tmp.setLadderNumber(randomNumber3);
-				tmp2.setLadderNumber(randomNumber3);
-				System.out.println("Entro a la parte final");
+				tmp.setLadderNumber(countedLadders+1);
+				tmp2.setLadderNumber(countedLadders+1);
+			
 				countedLadders+=1;
 				
 				
@@ -354,6 +346,17 @@ public class Board {
 	public void setLadders(int ladders) {
 		this.ladders = ladders;
 	}
-	
+	public String changePlayerPosition(Player player,Node originPosition, Node futurePosition) {
+		
+		String msg = "";
+		
+		msg  = "The Player: " + player.getSymbol() + " has move from: " + "["+originPosition.getPos()+"] to: " + "["+futurePosition.getPos()+"]";
+		
+		originPosition.setPlayerInNode(null);
+		futurePosition.setPlayerInNode(player);
+		player.setPos(futurePosition);
+		
+		return msg;
+	}
 	
 }

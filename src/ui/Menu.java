@@ -77,6 +77,8 @@ public class Menu {
 				
 				String msg = newGame.printBoard();
 				System.out.println(msg);
+				int quantity = newGame.currentAmountPlayer();
+				System.out.println("La cantidad de jugadores es: " + quantity);
 				
 				
 				break;

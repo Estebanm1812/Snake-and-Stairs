@@ -127,6 +127,7 @@ public class Node {
 	public void setPlayerInNode(Player playerInNode) {
 		this.playerInNode = playerInNode;
 	}
+	
 
 	
 }

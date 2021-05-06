@@ -8,6 +8,7 @@ public class Player {
 	private double score;
 	private Player previusPlayer;
 	private Player nextPlayer;
+	private int counter = 0;
 	
 	public Player(String symbol) {
 		
@@ -78,15 +79,22 @@ public class Player {
 		symbols+= symbol;
 		if(getNextPlayer()!=null) {
 			symbols+= " ,";
-			symbols += toStringPlayersSymbols(getNextPlayer(), symbols);
+			System.out.println("Entro 0");
+			symbols = toStringPlayersSymbols(getNextPlayer(), symbols);
 		}	
 		return symbols;
 	}
 	private String toStringPlayersSymbols(Player player,String msg) {
-		msg+= player.getSymbol() + ",";
+		
+		counter+=1;
+		System.out.println(counter);
+		msg += player.getSymbol() + " Entro";
+		System.out.println(player.getSymbol());
+		
 		if(player.getNextPlayer()!=null) {
 		
-		
+			msg+= " ,";
+			
 			msg+= toStringPlayersSymbols(player.getNextPlayer(), msg);
 		}
 		return msg;
