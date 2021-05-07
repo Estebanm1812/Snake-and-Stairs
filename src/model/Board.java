@@ -317,9 +317,12 @@ public class Board {
 		
 	
 	public Node findNode(int position, Node node) {
-		
+		System.out.println("Se rompe en findNode");
+		if(node==null) {
+			System.out.println("El Nodo es nulo");
+		}
 		if(node.getPos()==position) {
-		
+			
 			return node;
 			
 		}else {

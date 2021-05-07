@@ -16,7 +16,7 @@ public class Menu {
 	public Menu() {
 		
 	}
-	public void mainMenu() throws IOException {
+	public static void mainMenu() throws IOException {
 		int choose = -1;
 		choose =  showMenu();
 		
@@ -49,7 +49,7 @@ public class Menu {
 			br.close();		
 		
 	}
-	public int showMenu() throws IOException {
+	public static int showMenu() throws IOException {
 		int choose = 0;
 		System.out.println("Starting Applicacion");
 		System.out.println("Welcome to Snakes and Ladders, Please choose an Option");		
@@ -77,8 +77,9 @@ public class Menu {
 				
 				String msg = newGame.printBoard();
 				System.out.println(msg);
-				System.out.println(newGame.playerInPosition(2).getSymbol());
-				
+				int amount = newGame.currentAmountPlayer();
+				System.out.println("Game Begins");
+				keepPlaying(1,amount,newGame);
 				
 				
 				break;
@@ -141,6 +142,31 @@ public class Menu {
 				}
 		bw.close();
 	}
+	public static void keepPlaying(int player,int amountPlayer, Game newGame) throws IOException {
+		
+		if(newGame.getFinished()==false) {
+		
+		if(player<=amountPlayer) {
+			System.out.println("Es el turno del jugador numero: " + player);
+			
+			String line = br.readLine();
+			
+			if(line.equals("")) {
+				System.out.println("El jugador esta en: "+newGame.playerInPosition(player).getPos().getPos());
+				System.out.println(newGame.movePlayers(player));
+				keepPlaying(player+1, amountPlayer, newGame);
+				mainMenu();
+			}
+		}else {
+			keepPlaying(1, amountPlayer, newGame);
+			
+		}
+		}{
+			
+			
+		}
+	}
+	
 	public static void watchScores() {
 		
 	}

@@ -12,7 +12,7 @@ public class Player {
 	public Player(String symbol) {
 		
 		this.symbol = symbol;
-		pos = new Node(0,0,1);
+		pos = new Node(1,1,1);
 		moves = 0;
 		score = 0;
 		previusPlayer = null;
