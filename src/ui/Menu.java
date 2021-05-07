@@ -77,31 +77,65 @@ public class Menu {
 				
 				String msg = newGame.printBoard();
 				System.out.println(msg);
-				int quantity = newGame.currentAmountPlayer();
-				System.out.println("La cantidad de jugadores es: " + quantity);
+				System.out.println(newGame.playerInPosition(2).getSymbol());
+				
 				
 				
 				break;
 				case 6: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5]);
 					
+				String msg2 = newGame.printBoard();
+				System.out.println(msg2);
+				
 				break;
 				case 7: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6]);
+				
+				String msg3 = newGame.printBoard();
+				System.out.println(msg3);
+				
 				break;
 				case 8:	newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7]);
 					
+				String msg4 = newGame.printBoard();
+				System.out.println(msg4);
+				
 				break;
 				case 9: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8]);
 					
+				String msg5 = newGame.printBoard();
+				System.out.println(msg5);
+				
 				break;
 				case 10: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9]);
+				
+				
+				String msg6 = newGame.printBoard();
+				System.out.println(msg6);
 				break;
+				
 				case 11: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10]);
+				
+				String msg7 = newGame.printBoard();
+				System.out.println(msg7);
+				
 				break;
 				case 12: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10],parts[11]);
+				
+				String msg8 = newGame.printBoard();
+				System.out.println(msg8);
+				
 				break;
 				case 13: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10],parts[11],parts[12]);
+				
+				String msg9 = newGame.printBoard();
+				System.out.println(msg9);
+				
 				break;
 				case 14: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10],parts[11],parts[12],parts[13]);
+				
+				String msg10 = newGame.printBoard();
+				System.out.println(msg10);
+				
 				break;
 				}
 				}

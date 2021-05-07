@@ -144,15 +144,20 @@ public class Board {
 		int n = numRows*numCols;
 		int randomNumber = (int)(Math.random()*(n-1))+1;
 		
+		if(randomNumber == 1) {
+			randomNumber = (int)(Math.random()*(n-1))+1;
+		}
+		
 		int randomNumber2 = (int)(Math.random()*(n-1))+1;
 		
-		
+		if(randomNumber2 == 1) {
+			randomNumber2 = (int)(Math.random()*(n-1))+1;
+		}	
+			
 		String letter = generateRandomLetter(countedSnakes+1);
 	
 		if(first.getPos()==randomNumber) {
-			 
-				
-			
+			 	
 		}else {
 			Node tmp = findNode(randomNumber, first);
 			tmp.setInUse(true);
@@ -264,7 +269,14 @@ public class Board {
 		int n = numRows*numCols;
 		int randomNumber = (int)(Math.random()*(n-1))+1;
 		
+			if(randomNumber == 1) {
+				randomNumber = (int)(Math.random()*(n-1))+1;
+			}	
 		int randomNumber2 = (int)(Math.random()*(n-1))+1;
+		
+			if(randomNumber2 == 1) {
+			randomNumber2 = (int)(Math.random()*(n-1))+1;
+		}
 		
 		int randomNumber3 = (int)(Math.random()*ladders)+1;
 	

@@ -8,8 +8,7 @@ public class Player {
 	private double score;
 	private Player previusPlayer;
 	private Player nextPlayer;
-	private int counter = 0;
-	
+
 	public Player(String symbol) {
 		
 		this.symbol = symbol;
@@ -86,8 +85,7 @@ public class Player {
 	}
 	private String toStringPlayersSymbols(Player player,String msg) {
 		
-		counter+=1;
-		System.out.println(counter);
+		
 		msg += player.getSymbol();
 		System.out.println(player.getSymbol());
 		
@@ -100,5 +98,6 @@ public class Player {
 		return msg;
 		
 	}
+	
 	
 }

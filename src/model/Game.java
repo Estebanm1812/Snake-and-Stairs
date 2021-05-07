@@ -30,6 +30,7 @@ public class Game {
 		player2.setPreviusPlayer(player1);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
+		msg = gameBoard.toString();
 
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3) {
@@ -43,6 +44,7 @@ public class Game {
 		player3.setPreviusPlayer(player2);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
+		msg = gameBoard.toString();
 
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4) {
@@ -59,7 +61,7 @@ public class Game {
 		player4.setPreviusPlayer(player3);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
-
+		msg = gameBoard.toString();
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4,String symbol5) {
 		
@@ -78,6 +80,7 @@ public class Game {
 		player5.setPreviusPlayer(player4);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
+		msg = gameBoard.toString();
 
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6) {
@@ -100,7 +103,7 @@ public class Game {
 		player6.setPreviusPlayer(player5);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
-
+		msg = gameBoard.toString();
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7) {
 		
@@ -125,6 +128,7 @@ public class Game {
 		player7.setPreviusPlayer(player6);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
+		msg = gameBoard.toString();
 
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8) {
@@ -153,7 +157,7 @@ public class Game {
 		player8.setPreviusPlayer(player7);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
-
+		msg = gameBoard.toString();
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8,String symbol9) {
 		
@@ -184,7 +188,7 @@ public class Game {
 		player9.setPreviusPlayer(player8);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
-
+		msg = gameBoard.toString();
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8,String symbol9,String symbol10) {
 	
@@ -218,7 +222,7 @@ public class Game {
 		player10.setPreviusPlayer(player9);
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		finished = false;
-
+		msg = gameBoard.toString();
 	}
 	public void assignPlayers(Player player, int counter,int players) {
 		
@@ -402,6 +406,37 @@ public class Game {
 		}
 		return amount;
 	}
+	public String getMsg() {
+		return msg;
+	}
+	public Player playerInPosition(int position) {
+		
+		int counter = 1;
+		
+		if(position == counter) {
+		
+			return player1;
+		}else {
+			if(player1.getNextPlayer()!=null) {
+			
+				return playerInPosition(position, counter+1,player1);
+				
+			}	
+		}
+		return null;
+	}
+	private Player playerInPosition(int position, int counter,Player player) {
 	
-	
+		if(position == counter) {
+		
+			return player.getNextPlayer();
+			
+		}else {
+			
+			if(player.getNextPlayer()!=null) {
+			return playerInPosition(position, counter+1, player.getNextPlayer());
+			}
+		}
+		return null;
+	}	
 }
