@@ -365,11 +365,16 @@ public class Board {
 		
 		String msg = "";
 		
-		msg  = "The Player: " + player.getSymbol() + " has move from: " + "["+originPosition.getPos()+"] to: " + "["+futurePosition.getPos()+"]";
+		if(futurePosition.isInUse()==true) {
 		
+			Node tmp = futurePosition;
+			futurePosition = tmp.getConnection();
+		}	
 		originPosition.setPlayerInNode(null);
 		futurePosition.setPlayerInNode(player);
 		player.setPos(futurePosition);
+		
+		msg  = "The Player: " + player.getSymbol() + " has move from: " + "["+originPosition.getPos()+"] to: " + "["+futurePosition.getPos()+"]";
 		
 		return msg;
 	}
