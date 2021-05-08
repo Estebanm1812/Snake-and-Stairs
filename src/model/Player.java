@@ -78,7 +78,7 @@ public class Player {
 		symbols+= symbol;
 		if(getNextPlayer()!=null) {
 			symbols+= " ,";
-			System.out.println("Entro 0");
+			
 			symbols = toStringPlayersSymbols(getNextPlayer(), symbols);
 		}	
 		return symbols;
@@ -87,8 +87,7 @@ public class Player {
 		
 		
 		msg += player.getSymbol();
-		System.out.println(player.getSymbol());
-		
+
 		if(player.getNextPlayer()!=null) {
 		
 			msg+= " ,";

@@ -109,6 +109,62 @@ public class Board {
 		}
 		return msg3;
 	}
+	public String toStringJustBoard() {
+		
+		String msg2 = "";
+		
+		msg2 = toStringJustBoard(first);
+		
+		return msg2;
+		
+	}
+	
+	private String toStringJustBoard(Node node) {
+		
+		String msg = "";
+		
+		msg+= node.toStringWithoutPlayers();
+		
+		if(node.getRow()==1 && node.getColumn()!=1 ) {
+			msg+= "\n";
+			
+		}	
+		if(node.getNext()!=null) {
+			
+			msg+= toStringJustBoard(node.getNext());
+			
+		}
+		
+		
+		return msg;
+	}
+	public String toStringBoardWithPlayers() {
+		
+		String msg = "";
+		
+		msg = toStringBoardWithPlayers(first);
+		
+		
+		return msg;
+	}
+	private String toStringBoardWithPlayers(Node node) {
+		
+		String msg = "";
+		
+		msg+=   node.toStringWithPlayers();
+		
+		if(node.getRow()==1 && node.getColumn()!=1 ) {
+			msg+= "\n";
+			
+		}	
+		if(node.getNext()!=null) {
+			
+			msg+= toStringBoardWithPlayers(node.getNext());
+			
+		}
+		
+		return msg;
+	}
 	
 	/*
 	public String toStringRow(Node node) {
@@ -277,8 +333,6 @@ public class Board {
 			if(randomNumber2 == 1) {
 			randomNumber2 = (int)(Math.random()*(n-1))+1;
 		}
-		
-		int randomNumber3 = (int)(Math.random()*ladders)+1;
 	
 		if(first.getPos()==randomNumber) {
 			 

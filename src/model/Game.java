@@ -2,7 +2,7 @@ package model;
 
 public class Game {
 	
-	private WinerPlayer player;
+	private WinerPlayer playerWinner;
 	
 	private Board gameBoard;
 	
@@ -11,6 +11,8 @@ public class Game {
 	private Player player1;
 	
 	private String msg;
+	
+	private Player winnerPlayer;
 	
 	public Game(int numRows,int numColumns, int snakes, int ladders, int players) {
 		
@@ -31,6 +33,8 @@ public class Game {
 		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		player1.setPos(gameBoard.getFirst());
 		player2.setPos(gameBoard.getFirst());
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		finished = false;
 		msg = gameBoard.toString();
 
@@ -48,6 +52,9 @@ public class Game {
 		player1.setPos(gameBoard.getFirst());
 		player2.setPos(gameBoard.getFirst());
 		player3.setPos(gameBoard.getFirst());
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		finished = false;
 		msg = gameBoard.toString();
 
@@ -64,11 +71,17 @@ public class Game {
 		player3.setPreviusPlayer(player2);
 		player3.setNextPlayer(player4);
 		player4.setPreviusPlayer(player3);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		player1.setPos(gameBoard.getFirst());
 		player2.setPos(gameBoard.getFirst());
 		player3.setPos(gameBoard.getFirst());
 		player4.setPos(gameBoard.getFirst());
-		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		
+		
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player4.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		finished = false;
 		msg = gameBoard.toString();
 	}
@@ -93,6 +106,11 @@ public class Game {
 		player3.setPos(gameBoard.getFirst());
 		player4.setPos(gameBoard.getFirst());
 		player5.setPos(gameBoard.getFirst());
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player4.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player5.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		finished = false;
 		msg = gameBoard.toString();
 
@@ -122,6 +140,13 @@ public class Game {
 		player4.setPos(gameBoard.getFirst());
 		player5.setPos(gameBoard.getFirst());
 		player6.setPos(gameBoard.getFirst());
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player4.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player5.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player6.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		
 		finished = false;
 		msg = gameBoard.toString();
 	}
@@ -146,6 +171,7 @@ public class Game {
 		player6.setPreviusPlayer(player5);
 		player6.setNextPlayer(player7);
 		player7.setPreviusPlayer(player6);
+		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
 		player1.setPos(gameBoard.getFirst());
 		player2.setPos(gameBoard.getFirst());
 		player3.setPos(gameBoard.getFirst());
@@ -153,7 +179,13 @@ public class Game {
 		player5.setPos(gameBoard.getFirst());
 		player6.setPos(gameBoard.getFirst());
 		player7.setPos(gameBoard.getFirst());
-		gameBoard = new Board(numRows,numColumns,snakes,ladders,player1);
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player4.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player5.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player6.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player7.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		finished = false;
 		msg = gameBoard.toString();
 
@@ -192,6 +224,14 @@ public class Game {
 		player6.setPos(gameBoard.getFirst());
 		player7.setPos(gameBoard.getFirst());
 		player8.setPos(gameBoard.getFirst());
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player4.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player5.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player6.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player7.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player8.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		msg = gameBoard.toString();
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8,String symbol9) {
@@ -232,6 +272,15 @@ public class Game {
 		player7.setPos(gameBoard.getFirst());
 		player8.setPos(gameBoard.getFirst());
 		player9.setPos(gameBoard.getFirst());
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player4.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player5.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player6.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player7.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player8.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player9.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		msg = gameBoard.toString();
 	}
 	public Game(int numRows,int numColumns, int snakes, int ladders, String symbol1,String symbol2,String symbol3,String symbol4, String symbol5,String symbol6,String symbol7,String symbol8,String symbol9,String symbol10) {
@@ -276,6 +325,16 @@ public class Game {
 		player8.setPos(gameBoard.getFirst());
 		player9.setPos(gameBoard.getFirst());
 		player10.setPos(gameBoard.getFirst());
+		player1.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player2.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player3.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player4.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player5.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player6.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player7.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player8.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player9.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
+		player10.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		msg = gameBoard.toString();
 	}
 	public void assignPlayers(Player player, int counter,int players) {
@@ -384,7 +443,7 @@ public class Game {
 	public void assignPlayersFirstPosition(Player player) {
 		
 		player.setPos(gameBoard.getFirst());
-		
+		player.setScore(gameBoard.getNumCols()*gameBoard.getNumRows());
 		if(player.getNextPlayer()!=null) {
 			
 			
@@ -393,12 +452,12 @@ public class Game {
 	}
 	
 	
-	public WinerPlayer getPlayer() {
-		return player;
+	public WinerPlayer getPlayerWinner() {
+		return playerWinner;
 	}
 
-	public void setPlayer(WinerPlayer player) {
-		this.player = player;
+	public void setPlayer(WinerPlayer playerWinner) {
+		this.playerWinner = playerWinner;
 	}
 	public Board getGameBoard() {
 		return gameBoard;
@@ -431,7 +490,7 @@ public class Game {
 		int size = gameBoard.getNumRows()*gameBoard.getNumCols();
 		if(	(player.getPos().getPos()+movement)>(size)) {
 			
-			
+			winnerPlayer = player;
 			finished = true;
 			 msg = " The Player: " +player.getSymbol() + " Has win the game";
 			
@@ -439,12 +498,29 @@ public class Game {
 		
 			int posOrigin = player.getPos().getPos();
 		
-			System.out.println(player.getPos().getPos());
+			
 			Node tmpNode = gameBoard.findNode(posOrigin+movement, player.getPos());
 			msg = gameBoard.changePlayerPosition(player, player.getPos(), tmpNode);
 			
 		}	
 		return msg;
+	}
+	public WinerPlayer createWinnerPlayer(String nickName) {
+		
+		 int numRows = gameBoard.getNumRows();
+		
+		 int numColumns = gameBoard.getNumCols();
+		
+		 int snakes = gameBoard.getSnakes();
+		 
+		 int ladders = gameBoard.getLadders();
+		 
+		 String symbols = player1.toStringPlayersSymbols();
+		 
+		 double totalScore = winnerPlayer.calculateTotalScore();
+		
+		 playerWinner = new WinerPlayer(nickName, numColumns, numRows, snakes, ladders, symbols, totalScore);
+		 return playerWinner;
 	}
 	public String printBoard() {
 		
@@ -503,5 +579,21 @@ public class Game {
 			}
 		}
 		return null;
-	}	
+	}
+	public String printJustBoard() {
+		
+		String msg = "";
+		
+		msg = gameBoard.toStringJustBoard();
+		
+		return msg;
+	}
+	public String printCurrentBoard() {
+		
+		String msg = "";
+		
+		msg = gameBoard.toStringBoardWithPlayers();
+		
+		return msg;
+	}
 }

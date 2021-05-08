@@ -79,7 +79,40 @@ public class Node {
 		msg+= " ]";
 		return msg ;
 	}
-
+	public String toStringWithPlayers() {
+		
+		String msg = "";
+		
+		msg += "[ " + pos;
+		if(snakeLetter!="") {
+			
+			msg+= " "+snakeLetter;
+		}else if(ladderNumber !=0) {
+			
+			msg+= " " +ladderNumber;
+		}
+		if(playerInNode!=null) {
+			msg+= " "+playerInNode.getSymbol();
+		}
+		msg+= " ]";
+		
+		return msg;
+	}
+	public String toStringWithoutPlayers() {
+		
+		String msg = "";
+		msg += "[ " + pos;
+		if(snakeLetter!="") {
+			
+			msg+= " "+snakeLetter;
+		}else if(ladderNumber !=0) {
+			
+			msg+= " " +ladderNumber;
+		}
+		
+		msg+= " ]";
+		return msg ;
+	}
 	public int getPos() {
 		return pos;
 	}

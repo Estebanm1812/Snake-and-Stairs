@@ -7,11 +7,14 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 import model.Game;
+import model.ScoreSaver;
+import model.WinerPlayer;
 
 public class Menu {
 	
 	public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));	
 	public static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	public static ScoreSaver ss = new ScoreSaver();
 	
 	public Menu() {
 		
@@ -62,7 +65,7 @@ public class Menu {
 	public static void startANewGame() throws IOException {
 		
 		Game newGame;
-		
+		String nickName = "";
 		System.out.println("Write the number of column, rows, snakes, ladders and players like one of the next two examples: \n" +
 				"4, 5, 2, 2, 3 \n" + "4,5,2,2,*,!,$");
 				String [] parts = br.readLine().split(",");
@@ -81,7 +84,11 @@ public class Menu {
 				int amount = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount,newGame);
-				
+				System.out.println("Insert nickName for the winenrPlayer");
+				nickName = br.readLine();
+				WinerPlayer wp = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp);
+				showMenu();
 				
 				break;
 				case 6: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5]);
@@ -180,9 +187,10 @@ public class Menu {
 			String line = br.readLine();
 			
 			if(line.equals("")) {
-				System.out.println("El jugador esta en: "+newGame.playerInPosition(player).getPos().getPos());
+
 				System.out.println(newGame.movePlayers(player));
 				keepPlaying(player+1, amountPlayer, newGame);
+				
 				mainMenu();
 			}else if(line.equals("simul")) {
 				
@@ -191,6 +199,12 @@ public class Menu {
 			}else if(line.equals("menu")) {
 				
 				showMenu();
+			}else if(line.equals("num")) {
+				
+				System.out.println(newGame.printJustBoard());
+				br.readLine();
+				System.out.println(newGame.printCurrentBoard());
+				keepPlaying(player, amountPlayer, newGame);
 			}
 		}else{
 			keepPlaying(1, amountPlayer, newGame);
@@ -217,11 +231,14 @@ public class Menu {
 				keepPlayinAuto(1, amountPlayer, newGame);
 				
 			}
-			}{
+			}else {
 				
-				
+				System.out.println("Insert nickName for the winner Player");
+				String nickName = br.readLine();
+				WinerPlayer wp = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp);	
+			
 			}
-		
 	}
 	
 	public static void watchScores() {
