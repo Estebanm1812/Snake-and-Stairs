@@ -438,9 +438,7 @@ public class Game {
 		}else {
 		
 			int posOrigin = player.getPos().getPos();
-			if(player.getPos()==null) {
-				System.out.println("El nodo es nulo 0");
-			}
+		
 			System.out.println(player.getPos().getPos());
 			Node tmpNode = gameBoard.findNode(posOrigin+movement, player.getPos());
 			msg = gameBoard.changePlayerPosition(player, player.getPos(), tmpNode);

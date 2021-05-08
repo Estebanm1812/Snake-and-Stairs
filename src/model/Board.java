@@ -317,10 +317,7 @@ public class Board {
 		
 	
 	public Node findNode(int position, Node node) {
-		System.out.println("Se rompe en findNode");
-		if(node==null) {
-			System.out.println("El Nodo es nulo");
-		}
+		
 		if(node.getPos()==position) {
 			
 			return node;
@@ -366,13 +363,32 @@ public class Board {
 		String msg = "";
 		
 		if(futurePosition.isInUse()==true) {
-		
-			Node tmp = futurePosition;
-			futurePosition = tmp.getConnection();
+			
+			if(futurePosition.getSnakeLetter()!=("")) {
+				
+				if(futurePosition.getPos()>futurePosition.getConnection().getPos()) {
+					
+					Node tmp = futurePosition;
+					futurePosition = tmp.getConnection();
+				}
+				
+			}else if(futurePosition.getLadderNumber()!=0) {
+				
+				if(futurePosition.getPos()<futurePosition.getConnection().getPos()) {
+					
+					Node tmp = futurePosition;
+					futurePosition = tmp.getConnection();
+					
+				}
+				
+			}
+			
 		}	
 		originPosition.setPlayerInNode(null);
 		futurePosition.setPlayerInNode(player);
 		player.setPos(futurePosition);
+		int playerMoves = player.getMoves();
+		player.setMoves(playerMoves+1);
 		
 		msg  = "The Player: " + player.getSymbol() + " has move from: " + "["+originPosition.getPos()+"] to: " + "["+futurePosition.getPos()+"]";
 		
