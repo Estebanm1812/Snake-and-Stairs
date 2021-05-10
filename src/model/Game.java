@@ -518,8 +518,10 @@ public class Game {
 		 String symbols = player1.toStringPlayersSymbols();
 		 
 		 double totalScore = winnerPlayer.calculateTotalScore();
+		 
+		 String winnerSymbol = winnerPlayer.getSymbol();
 		
-		 playerWinner = new WinerPlayer(nickName, numColumns, numRows, snakes, ladders, symbols, totalScore);
+		 playerWinner = new WinerPlayer(nickName, numColumns, numRows, snakes, ladders, symbols, totalScore,winnerSymbol);
 		 return playerWinner;
 	}
 	public String printBoard() {
