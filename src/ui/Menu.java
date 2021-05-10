@@ -55,7 +55,6 @@ public class Menu {
 	}
 	public static int showMenu() throws IOException {
 		int choose = 0;
-		System.out.println("Starting Applicacion");
 		System.out.println("Welcome to Snakes and Ladders, Please choose an Option");		
 		System.out.print("(1) To Play a new Game\n" + "(2) To see the Winners`s scores \n" + "(3) To exit the Game\n");
 		choose = Integer.parseInt(br.readLine());
@@ -88,7 +87,7 @@ public class Menu {
 				nickName = br.readLine();
 				WinerPlayer wp = newGame.createWinnerPlayer(nickName);
 				ss.addWinnerPlayer(wp);
-				showMenu();
+				mainMenu();
 				
 				break;
 				case 6: newGame = new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5]);
@@ -98,6 +97,10 @@ public class Menu {
 				int amount2 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount2,newGame);
+				nickName = br.readLine();
+				WinerPlayer wp2 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp2);
+				mainMenu();
 				
 				break;
 				case 7: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6]);
@@ -107,7 +110,10 @@ public class Menu {
 				int amount3 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount3,newGame);
-				
+				nickName = br.readLine();
+				WinerPlayer wp3 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp3);
+				mainMenu();
 				break;
 				case 8:	newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7]);
 					
@@ -116,7 +122,10 @@ public class Menu {
 				int amount4 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount4,newGame);
-				
+				nickName = br.readLine();
+				WinerPlayer wp4 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp4);
+				mainMenu();
 				break;
 				case 9: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8]);
 					
@@ -125,7 +134,10 @@ public class Menu {
 				int amount5 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount5,newGame);
-				
+				nickName = br.readLine();
+				WinerPlayer wp5 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp5);
+				mainMenu();
 				break;
 				case 10: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9]);
 				
@@ -135,6 +147,10 @@ public class Menu {
 				int amount6 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount6,newGame);
+				nickName = br.readLine();
+				WinerPlayer wp6 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp6);
+				mainMenu();
 				break;
 				
 				case 11: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10]);
@@ -144,6 +160,10 @@ public class Menu {
 				int amount7 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount7,newGame);
+				nickName = br.readLine();
+				WinerPlayer wp67 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp67);
+				mainMenu();
 				
 				break;
 				case 12: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10],parts[11]);
@@ -153,6 +173,10 @@ public class Menu {
 				int amount8 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount8,newGame);
+				nickName = br.readLine();
+				WinerPlayer wp8 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp8);
+				mainMenu();
 				
 				break;
 				case 13: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10],parts[11],parts[12]);
@@ -162,6 +186,10 @@ public class Menu {
 				int amount9 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount9,newGame);
+				nickName = br.readLine();
+				WinerPlayer wp9 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp9);
+				mainMenu();
 				
 				break;
 				case 14: newGame =new Game(Integer.parseInt(parts[0]),Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),Integer.parseInt(parts[3]),parts[4],parts[5],parts[6],parts[7],parts[8],parts[9],parts[10],parts[11],parts[12],parts[13]);
@@ -171,6 +199,10 @@ public class Menu {
 				int amount10 = newGame.currentAmountPlayer();
 				System.out.println("Game Begins");
 				keepPlaying(1,amount10,newGame);
+				nickName = br.readLine();
+				WinerPlayer wp10 = newGame.createWinnerPlayer(nickName);
+				ss.addWinnerPlayer(wp10);
+				mainMenu();
 				
 				break;
 				}
@@ -241,12 +273,14 @@ public class Menu {
 			}
 	}
 	
-	public static void watchScores() {
+	public static void watchScores() throws IOException {
 		
 		String msg = " ";
 		
 		try {
-			bw.write(msg);
+			msg = ss.showScores();
+			System.out.println(msg);
+			mainMenu();
 		} catch (IOException e) {
 			
 			e.printStackTrace();

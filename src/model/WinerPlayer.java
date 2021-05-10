@@ -8,20 +8,20 @@ public class WinerPlayer extends Player{
 	private int ladders;
 	private String symbols;
 	private double totalScore;
-	private String winnerSymbol;
+	private String nickName;
 		
 	private WinerPlayer nextWinnerPlayer;
 	private WinerPlayer previousWinnerPlayer;
 	
-	public WinerPlayer(String symbol,int columns,int rows,int snakes,int ladders,String symbols,double totalScore,String winnerSymbol) {
-		super(symbol);
+	public WinerPlayer(String winnerSymbol,int columns,int rows,int snakes,int ladders,String symbols,double totalScore,String nickName) {
+		super(winnerSymbol);
 		this.columns = columns;
 		this.rows = rows;
 		this.snakes = snakes;
 		this.ladders = ladders;
 		this.symbols = symbols;
 		this.totalScore = totalScore;
-		this.winnerSymbol = winnerSymbol;
+		this.nickName = nickName;
 	}
 
 	public int getColumns() {
@@ -88,13 +88,15 @@ public class WinerPlayer extends Player{
 		this.previousWinnerPlayer = previousWinnerPlayer;
 	}
 
-	public String getWinnerSymbol() {
-		return winnerSymbol;
+	public String getNickName() {
+		return nickName;
 	}
 
-	public void setWinnerSymbol(String winnerSymbol) {
-		this.winnerSymbol = winnerSymbol;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
+
+	
 	
 
 	

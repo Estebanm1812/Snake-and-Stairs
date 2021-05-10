@@ -521,7 +521,7 @@ public class Game {
 		 
 		 String winnerSymbol = winnerPlayer.getSymbol();
 		
-		 playerWinner = new WinerPlayer(nickName, numColumns, numRows, snakes, ladders, symbols, totalScore,winnerSymbol);
+		 playerWinner = new WinerPlayer(winnerSymbol, numColumns, numRows, snakes, ladders, symbols, totalScore,nickName);
 		 return playerWinner;
 	}
 	public String printBoard() {
