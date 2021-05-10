@@ -182,7 +182,7 @@ public class Menu {
 		if(newGame.getFinished()==false) {
 		
 		if(player<=amountPlayer) {
-			System.out.println("Es el turno del jugador numero: " + player);
+			
 			
 			String line = br.readLine();
 			
@@ -242,6 +242,15 @@ public class Menu {
 	}
 	
 	public static void watchScores() {
+		
+		String msg = " ";
+		
+		try {
+			bw.write(msg);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 		
 	}
 }
