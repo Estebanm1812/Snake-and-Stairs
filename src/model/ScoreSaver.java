@@ -47,8 +47,33 @@ public class ScoreSaver {
 		
 		String msg = "";
 		
+		if(wp == null) {
+			
+			msg = "There are not a winner Player yet";
+			
+		}else {
+			
+			msg += showScores(msg,wp);
+			
+		}
+		return msg;
+	}
+	private String showScores(String msg, WinerPlayer wpr) {
 		
-		
+		if(wpr.getNextWinnerPlayer()==null && wpr.getPreviousWinnerPlayer()==null) {
+			
+			
+			msg+= "\n The Player " + wpr.getNickName() + " had a Score of: " + wpr.getTotalScore();
+			
+		}else {
+			
+			if(wpr.getNextWinnerPlayer()!=null) {
+				showScores(msg,wpr.getNextWinnerPlayer());
+			}
+			if(wpr.getPreviousWinnerPlayer()!=null) {
+				showScores(msg, wpr.getPreviousWinnerPlayer());
+			}
+		}
 		return msg;
 	}
 	
