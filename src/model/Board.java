@@ -41,6 +41,7 @@ public class Board {
 		if(j<=numRows && i <=numCols) {
 		
 			tmpNode= new Node(i,j,node.getPos()+1);
+			System.out.println("El nodo que se creo tiene una columna de " + tmpNode.getColumn() + " Una fila de:" + tmpNode.getRow() + " y una pos de:" + tmpNode.getPos());
 			tmpNode.setPrevious(node);
 			node.setNext(tmpNode);
 			
@@ -87,24 +88,32 @@ public class Board {
 	public String toStringRow() {
 		
 		String msg2 = "";
-		
-		msg2 = toStringRow(first);
+		int counter = 1;
+		msg2 = toStringRow(first,counter);
 		
 		return msg2;
 	}
-	private String toStringRow(Node node) {
-	
+	private String toStringRow(Node node, int counter) {
+		
+		
+		
 		String msg3 = "";
 		
-		msg3+= node.toString() + " ";
-	
-		if(node.getRow()==1 && node.getColumn()!=1 ) {
-			msg3+= "\n";
+		
 			
-		}	
+			/*if(totalSize%counter==numCols) {
+				msg3+= "\n";
+				
+			} */	
+		if(node.getColumn()==1 && node.getRow()!=1 ) {
+			msg3+= "\n";
+			System.out.println("Hizo un salto de linea en el nodo: " + node.getPos() + " cuyo row es: " + node.getRow() + " y column: " + node.getColumn());
+		}
+		msg3+= node.toString() + " ";
+		
 		if(node.getNext()!=null) {
 			
-			msg3+= toStringRow(node.getNext());
+			msg3+= toStringRow(node.getNext(),counter+1);
 			
 		}
 		return msg3;
