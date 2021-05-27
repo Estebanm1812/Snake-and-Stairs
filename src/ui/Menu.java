@@ -65,7 +65,7 @@ public class Menu {
 		
 		Game newGame;
 		String nickName = "";
-		System.out.println("Write the number of column, rows, snakes, ladders and players like one of the next two examples: \n" +
+		System.out.println("Write the number of rows, columns, snakes, ladders and players like one of the next two examples: \n" +
 				"4, 5, 2, 2, 3 \n" + "4,5,2,2,*,!,$");
 				String [] parts = br.readLine().split(",");
 				
@@ -221,6 +221,7 @@ public class Menu {
 			if(line.equals("")) {
 
 				System.out.println(newGame.movePlayers(player));
+				System.out.println(newGame.printCurrentBoard());
 				keepPlaying(player+1, amountPlayer, newGame);
 				
 				mainMenu();
@@ -243,7 +244,10 @@ public class Menu {
 			
 		}
 		}{
-			
+			System.out.println("Insert nickName for the winner Player");
+			String nickName = br.readLine();
+			WinerPlayer wp = newGame.createWinnerPlayer(nickName);
+			ss.addWinnerPlayer(wp);	
 			
 		}
 	}
@@ -256,6 +260,7 @@ public class Menu {
 				
 					System.out.println("El jugador esta en: "+newGame.playerInPosition(player).getPos().getPos());
 					System.out.println(newGame.movePlayers(player));
+					System.out.println(newGame.printCurrentBoard());
 					keepPlayinAuto(player+1, amountPlayer, newGame);
 					mainMenu();
 				

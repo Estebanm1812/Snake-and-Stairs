@@ -13,8 +13,8 @@ public class Board {
 	
 	public Board(int m,int n,int s,int l,Player player1) {
 		
-		numCols = n;
-		numRows = m;
+		numCols = m;
+		numRows = n;
 		snakes = s;
 		ladders = l;
 		createBoard();
@@ -41,7 +41,6 @@ public class Board {
 		if(j<=numRows && i <=numCols) {
 		
 			tmpNode= new Node(i,j,node.getPos()+1);
-			System.out.println("El nodo que se creo tiene una columna de " + tmpNode.getColumn() + " Una fila de:" + tmpNode.getRow() + " y una pos de:" + tmpNode.getPos());
 			tmpNode.setPrevious(node);
 			node.setNext(tmpNode);
 			
@@ -107,7 +106,7 @@ public class Board {
 			} */	
 		if(node.getColumn()==1 && node.getRow()!=1 ) {
 			msg3+= "\n";
-			System.out.println("Hizo un salto de linea en el nodo: " + node.getPos() + " cuyo row es: " + node.getRow() + " y column: " + node.getColumn());
+			
 		}
 		msg3+= node.toString() + " ";
 		
@@ -160,12 +159,13 @@ public class Board {
 		
 		String msg = "";
 		
-		msg+=   node.toStringWithPlayers();
 		
-		if(node.getRow()==1 && node.getColumn()!=1 ) {
+		
+		if(node.getColumn()==1 && node.getRow()!=1 ) {
 			msg+= "\n";
 			
-		}	
+		}
+		msg+=   node.toStringWithPlayers();
 		if(node.getNext()!=null) {
 			
 			msg+= toStringBoardWithPlayers(node.getNext());

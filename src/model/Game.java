@@ -18,7 +18,6 @@ public class Game {
 		
 		player1 = new Player("!");
 		assignPlayers(player1,2,players);
-		System.out.println(player1.toStringPlayersSymbols());
 		gameBoard =new Board(numRows,numColumns,snakes,ladders,player1);
 		assignPlayersFirstPosition(player1);
 		finished = false;
