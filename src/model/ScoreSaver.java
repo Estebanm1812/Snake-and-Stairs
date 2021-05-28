@@ -90,7 +90,6 @@ public class ScoreSaver {
 		return msg;
 	}*/
 	private void showScores(WinerPlayer wpr) {
-		
 		if(wpr == null) {
 			return;
 		}else {

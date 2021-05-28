@@ -487,7 +487,7 @@ public class Game {
 		
 		String msg = " ";
 		int size = gameBoard.getNumRows()*gameBoard.getNumCols();
-		if(	(player.getPos().getPos()+movement)>(size)) {
+		if(	(player.getPos().getPos()+movement)>=(size)) {
 			
 			winnerPlayer = player;
 			finished = true;

@@ -219,7 +219,10 @@ public class Menu {
 			String line = br.readLine();
 			
 			if(line.equals("")) {
-
+				
+				System.out.println("It`s the turn of the player number : " + player);
+				
+				System.out.println("The Player is in: "+newGame.playerInPosition(player).getPos().getPos());
 				System.out.println(newGame.movePlayers(player));
 				System.out.println(newGame.printCurrentBoard());
 				keepPlaying(player+1, amountPlayer, newGame);
@@ -256,9 +259,9 @@ public class Menu {
 		if(newGame.getFinished()==false) {
 			
 			if(player<=amountPlayer) {
-				System.out.println("Es el turno del jugador numero: " + player);
+				System.out.println("It`s the turn of the player number : " + player);
 				
-					System.out.println("El jugador esta en: "+newGame.playerInPosition(player).getPos().getPos());
+					System.out.println("The Player is in: "+newGame.playerInPosition(player).getPos().getPos());
 					System.out.println(newGame.movePlayers(player));
 					System.out.println(newGame.printCurrentBoard());
 					keepPlayinAuto(player+1, amountPlayer, newGame);
