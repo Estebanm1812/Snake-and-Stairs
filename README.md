@@ -3,4 +3,5 @@ A Snake and Ladders game in console, where the user can create a new Game with t
 
 
 Changelog
-Map print in the console, the winner player`s score saver and winner players score printer.
+
+\n Map print in the console, the winner player`s score saver and winner players score printer.
